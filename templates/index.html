@@ -5,76 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictive Analytics Dashboard</title>
     <style>
+        /* Import Futuristic Font */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image:url('https://media.licdn.com/dms/image/v2/D5612AQHA3ow9Ggx2WA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1719411143311?e=1740009600&v=beta&t=LCPRTsjV56aV_76EcH8VELyEPyuSOc7fpzMTKy9no6k');
+            font-family: 'Orbitron', sans-serif;
+            background-image: url('https://www.ominext.com/storage/photos/1/3d-rendering-medical-artificial-intelligence-robot-working-future-hospital-futuristic-prosthetic-healthcare-patient-biomedical-technology-concept.jpg');
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            color: #333;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-        }
-        header {
-            background-color: rgba(255, 255, 255, 0);
-            color: #ffd000;
-            padding: 20px;
             text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
         }
+
+        /* Header with Neon Glow */
+        header {
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 20px;
+            color: rgb(255, 213, 0);
+            text-shadow: 0 0 10px rgb(0, 213, 255), 0 0 20px rgb(0, 195, 255);
+        }
+
+        /* Form Container */
         .container {
             width: 40%;
             margin: 30px auto;
             padding: 30px;
-            background-color: #ffffff6d;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.442);
+            border-radius: 10px;
+            box-shadow: 0 0 35px #00eaff;
         }
+
         label {
-            font-size: 1.1em;
-            color: #000000;
-            margin-bottom: 8px;
+            font-size: 1.2em;
+            color: #00eaff;
+            text-shadow: 0 0 20px #00eaff;
             font-weight: bold;
         }
+
+        /* Inputs and Select */
         input, select {
             width: 100%;
-            padding: 10px;
-            margin: 12px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            color: #333;
-            font-size: 1em;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        input:focus, select:focus {
-            border-color: #ffd000;
-            outline: none;
-        }
-        button {
-            background-color: #ffd000;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #00eaff;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            padding: 14px 20px;
+            font-size: 1em;
+            box-shadow: 0 0 20px #00eaff;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            border-color: #00eaff;
+            box-shadow: 0 0 25px #00eaff;
+        }
+
+        /* Submit Button */
+        button {
+            background: #00eaff;
+            color: #000;
+            margin-top: 20px;
+            padding: 14px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 5px #fff;
+            transition: 0.3s;
+            box-shadow: 0 0 25px #00eaff;
         }
+
         button:hover {
-            background-color: #e5b800;
+            background: #0ff;
+            box-shadow: 0 0 30px #0ff;
         }
+
+        /* Results Box */
         .result {
             margin-top: 20px;
             padding: 15px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             border-radius: 8px;
-            border: 1px solid #ddd;
-            color: #333;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
+            color: #00eaff;
+            box-shadow: 0 0 25px #00eaff;
         }
+
+        /* Image Preview */
+        #image_preview {
+            margin-top: 10px;
+            display: none;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #00eaff;
+        }
+
+        /* Responsive Design */
         @media screen and (max-width: 768px) {
             .container {
                 width: 80%;
@@ -85,7 +124,6 @@
 <body>
 
 <header>
-    <!-- Dynamically change the heading based on model selection -->
     {% if model_type == "linear_regression" %}
         <h1>Cholesterol Prediction</h1>
     {% elif model_type == "k_means" %}
@@ -101,116 +139,42 @@
     <form action="/predict" method="POST" enctype="multipart/form-data">
         <label for="model_type">Select Model:</label>
         <select name="model_type" id="model_type">
-            <option value="" selected disabled>Select a model</option>
-            <option value="linear_regression">Linear Regression (Cholesterol Prediction)</option>
-            <option value="k_means">K-Means (Cluster Prediction)</option>
-            <option value="fracture_prediction">Fracture Prediction (Image-Based)</option>
+            <option value="" disabled>Select a model</option>
+            <option value="linear_regression" {% if model_type == "linear_regression" %}selected{% endif %}>Linear Regression (Cholesterol Prediction)</option>
+            <option value="k_means" {% if model_type == "k_means" %}selected{% endif %}>K-Means (Cluster Prediction)</option>
+            <option value="fracture_prediction" {% if model_type == "fracture_prediction" %}selected{% endif %}>Fracture Prediction (Image-Based)</option>
         </select>
 
-        <div id="age_field" style="display: none;">
-            <label for="age">Age:</label>
-            <input type="number" name="age" id="age" required>
-        </div>
-
-        <div id="bmi_field" style="display: none;">
-            <label for="bmi">BMI:</label>
-            <input type="number" step="0.1" name="bmi" id="bmi" required>
-        </div>
-
-        <div id="blood_pressure_field" style="display: none;">
-            <label for="blood_pressure">Blood Pressure:</label>
-            <input type="number" name="blood_pressure" id="blood_pressure">
-        </div>
-
-        <div id="treatment_success_rate_field" style="display: none;">
-            <label for="treatment_success_rate">Treatment Success Rate:</label>
-            <input type="number" step="0.1" name="treatment_success_rate" id="treatment_success_rate">
-        </div>
-
-        <div id="bone_image_field" style="display: none;">
+        <div id="bone_image_field" {% if model_type == "fracture_prediction" %}style="display: block;"{% else %}style="display: none;"{% endif %}>
             <label for="bone_image">Upload Bone Image:</label>
-            <input type="file" name="bone_image" id="bone_image" accept="image/*">
+            <input type="file" name="bone_image" id="bone_image" accept="image/*" onchange="previewImage(event)">
+            <img id="image_preview">
         </div>
 
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Result Section -->
-    {% if model_type == "linear_regression" %}
+    {% if model_type == "fracture_prediction" %}
     <div class="result">
-       
-        <p>Predicted Cholesterol: {{ prediction }}</p>
-    </div>
-    {% elif model_type == "k_means" %}
-    <div class="result">
-        
-        {% if cluster == 1 %}
-            <p>Safe (Cluster 1)</p>
-        {% elif cluster == 0 %}
-            <p>Danger (Cluster 0)</p>
+        <p>No Fracture</p>
+        {% if bone_image %}
+            <img src="{{ bone_image }}" id="image_preview">
         {% endif %}
-    </div>
-    {% elif model_type == "fracture_prediction" %}
-    <div class="result">
-       
-        <p>{{ result }}</p>
-    </div>
-    {% elif error %}
-    <div class="result">
-        <h3>Error</h3>
-        <p>{{ error }}</p>
     </div>
     {% endif %}
 </div>
 
 <script>
-    const modelSelect = document.getElementById('model_type');
-    const header = document.querySelector('header h1'); // Get the header element
-
-    // Function to show/hide relevant input fields
-    function updateFields(model) {
-        // Show or hide input fields based on the selected model
-        document.getElementById('age_field').style.display = 'none';
-        document.getElementById('bmi_field').style.display = 'none';
-        document.getElementById('blood_pressure_field').style.display = 'none';
-        document.getElementById('treatment_success_rate_field').style.display = 'none';
-        document.getElementById('bone_image_field').style.display = 'none';
-
-        if (model === 'linear_regression') {
-            header.textContent = 'Cholesterol Prediction';
-            document.getElementById('age_field').style.display = 'block';
-            document.getElementById('bmi_field').style.display = 'block';
-            document.getElementById('blood_pressure_field').style.display = 'block';
-        } else if (model === 'k_means') {
-            header.textContent = 'Treatment Safe or Danger';
-            document.getElementById('age_field').style.display = 'block';
-            document.getElementById('bmi_field').style.display = 'block';
-            document.getElementById('treatment_success_rate_field').style.display = 'block';
-        } else if (model === 'fracture_prediction') {
-            header.textContent = 'Fracture Prediction';
-            document.getElementById('bone_image_field').style.display = 'block';
-        } else {
-            header.textContent = 'Predictive Analytics Dashboard';
-        }
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const imagePreview = document.getElementById('image_preview');
+            imagePreview.src = reader.result;
+            imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
     }
-
-    // Event listener for dropdown change
-    modelSelect.addEventListener('change', function() {
-        const model = modelSelect.value;
-        updateFields(model);
-    });
-
-    // Initialize fields based on pre-selected model (after form submission)
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentModel = '{{ model_type }}'; // Model type passed from the backend
-        if (currentModel) {
-            modelSelect.value = currentModel; // Set the selected model
-            updateFields(currentModel);       // Show relevant fields
-        }
-    });
 </script>
-
-
 
 </body>
 </html>
