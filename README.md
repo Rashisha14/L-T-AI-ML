@@ -1,8 +1,4 @@
-# L-T-AI-ML
 
-An AI/ML-based healthcare project that **detects bone fractures from X-ray images** and **predicts cholesterol levels** using patient data such as **blood pressure (BP), BMI, and WBC count**.
-
----
 
 # <p align="center">L-T AI ML Healthcare Project</p>
 
@@ -48,7 +44,8 @@ An **AI/ML healthcare project** that detects **bone fractures from X-ray images*
 ## ⚙️ Installation Guide
 
 1. **Clone the Repository**
-```bash
+
+bash
 git clone https://github.com/Rashisha14/L-T-AI-ML.git
 cd L-T-AI-ML
 Create Virtual Environment & Install Dependencies
@@ -82,12 +79,17 @@ Copy code
 ├── static/uploads/         # Uploaded X-ray demo images
 ├── requirements.txt        # Dependencies
 └── README.md               # Documentation
+
+
 🖼 Screenshots
+
 Fracture Detection
 <p align="center"> <img src="static/uploads/fracture_demo.png" alt="Fracture Detection Demo" width="600"> </p>
 Cholesterol Prediction
 <p align="center"> <img src="static/uploads/cholesterol_demo.png" alt="Cholesterol Prediction Demo" width="600"> </p>
+
 🛠 Technologies Used
+
 <p align="left"> <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"></a> </p>
 Language: Python
 
@@ -99,7 +101,7 @@ Libraries: TensorFlow, Keras, Scikit-Learn, OpenCV, NumPy, Pandas
 
 MIT License
 
-<p align="left"> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a> </p> ```
+<p align="left"> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a> </p>
 
 <p align="left"> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT 
 
