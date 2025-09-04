@@ -57,11 +57,11 @@ python app.py
 4. **Open in your browser**
 Open http://localhost:5000 manually in your browser
 
-▶️ Usage
+## ▶️ Usage
 
 Fracture Detection → Upload an X-ray image → Model highlights fracture presence.
 
-📂 Project Structure
+## 📂 Project Structure
 ```
 L-T-AI-ML/
 ├── app.py                  # Flask app entry point (runs the web interface)
@@ -100,23 +100,25 @@ L-T-AI-ML/
 
 
 
-🖼 Screenshots
-Fracture Detection
-<p align="center"> <img src="static/uploads/fracture_demo.png" alt="Fracture Detection Demo" width="600"> </p>
-Cholesterol Prediction
-<p align="center"> <img src="static/uploads/cholesterol_demo.png" alt="Cholesterol Prediction Demo" width="600"> </p>
+## 🖼 Screenshots
+
+**Fracture Detection**
+<p align="center"> <img src="data/train/fracture/10.jpg" alt="Fracture Detection Demo" width="600"> </p>
+
+**Cholesterol Prediction**
+<p align="center"> <img src="uploads/Figure_1 (1).png" alt="Cholesterol Prediction Demo" width="600"> </p>
 
 
-🛠 Technologies Used
+## 🛠 Technologies Used
 <p align="center"> <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"></a> </p>
 
-Language: Python
+**Language:** Python
 
-Framework: Flask
+**Framework:** Flask
 
-Libraries: TensorFlow, Keras, Scikit-Learn, OpenCV, NumPy, Pandas
+**Libraries:** TensorFlow, Keras, Scikit-Learn, OpenCV, NumPy, Pandas
 
-📜 License
+## 📜 License
 
 MIT License
 
