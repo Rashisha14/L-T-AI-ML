@@ -35,19 +35,20 @@ An **AI/ML healthcare project** that detects **bone fractures from X-ray images*
 ## ⚙️ Installation Guide
 
 1. **Clone the Repository**
-git clone https://github.com/Rashisha14/L-T-AI-ML.git
-cd L-T-AI-ML
 
-2. **Create Virtual Environment & Install Dependencies**
+git clone https://github.com/Rashisha14/L-T-AI-ML.git
+cd L-T-AI-ML```bash
+
+3. **Create Virtual Environment & Install Dependencies**
 python3 -m venv venv
 On Windows use: venv\Scripts\activate
 source venv/bin/activate
 pip install -r requirements.txt
 
-3. **Run the Flask App**
+4. **Run the Flask App**
 python app.py
 
-4. **Open in your browser**
+5. **Open in your browser**
 Open http://localhost:5000 manually in your browser
 
 ▶️ Usage
