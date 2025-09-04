@@ -36,19 +36,25 @@ An **AI/ML healthcare project** that detects **bone fractures from X-ray images*
 
 1. **Clone the Repository**
 
+```
 git clone https://github.com/Rashisha14/L-T-AI-ML.git
-cd L-T-AI-ML```bash
+cd L-T-AI-ML
+```
 
-3. **Create Virtual Environment & Install Dependencies**
+2. **Create Virtual Environment & Install Dependencies**
+```
 python3 -m venv venv
 On Windows use: venv\Scripts\activate
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
-4. **Run the Flask App**
+3. **Run the Flask App**
+```
 python app.py
+```
 
-5. **Open in your browser**
+4. **Open in your browser**
 Open http://localhost:5000 manually in your browser
 
 ▶️ Usage
@@ -56,6 +62,7 @@ Open http://localhost:5000 manually in your browser
 Fracture Detection → Upload an X-ray image → Model highlights fracture presence.
 
 📂 Project Structure
+```
 L-T-AI-ML/
 ├── app.py                  # Flask app entry point (runs the web interface)
 ├── train1.py               # Train fracture detection model on X-ray dataset
@@ -89,6 +96,7 @@ L-T-AI-ML/
 ├── requirements.txt        # Python dependencies
 ├── README.md               # Project documentation
 └── LICENSE                 # License information
+```
 
 
 
@@ -97,6 +105,8 @@ Fracture Detection
 <p align="center"> <img src="static/uploads/fracture_demo.png" alt="Fracture Detection Demo" width="600"> </p>
 Cholesterol Prediction
 <p align="center"> <img src="static/uploads/cholesterol_demo.png" alt="Cholesterol Prediction Demo" width="600"> </p>
+
+
 🛠 Technologies Used
 <p align="center"> <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"></a> <a href="#"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"></a> </p>
 
